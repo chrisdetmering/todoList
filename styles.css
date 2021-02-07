@@ -1,0 +1,14 @@
+body {
+  background-color: #B4F8C8;
+  color: #606361;
+  display: flex;
+	align-items: center;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+h1 {
+  font-size: 3em;
+  border-bottom: 2px solid #606361;
+}
+
