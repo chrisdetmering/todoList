@@ -34,5 +34,20 @@ input {
 }
 li {
 	font-size: 2rem;
-	list-style-type: circle;
+	list-style-type: none;
+	padding-left: 50px;
+}
+
+.completed {
+	text-decoration: line-through;
+	color: rgba(96, 99, 97, 0.5);
+}
+
+.btn {
+	position: relative;
+	float: left;
+	margin-top: 15px;
+	border: #000 solid;
+	padding: 10px;
+	border-radius: 100%;
 }
