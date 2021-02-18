@@ -32,22 +32,18 @@ input {
 	height: 50px;
 	border-radius: 10px;
 }
+ul {
+	padding: 0;
+}
 li {
 	font-size: 2rem;
-	list-style-type: none;
-	padding-left: 50px;
+	list-style-type: disc;
+	padding-left: 0px;
 }
-
+h4 {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .completed {
 	text-decoration: line-through;
 	color: rgba(96, 99, 97, 0.5);
-}
-
-.btn {
-	position: relative;
-	float: left;
-	margin-top: 15px;
-	border: #000 solid;
-	padding: 10px;
-	border-radius: 100%;
 }
