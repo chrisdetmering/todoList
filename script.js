@@ -1,33 +1,38 @@
-const form = document.getElementById('form');
-const input = document.getElementById('input');
-const taskUl = document.getElementById('task');
+const todoList = document.getElementById('task');
 
-// Add Task Function
+document.getElementById('form')
+.addEventListener('submit', function (e) {
+	e.preventDefault();
 
-const addTask = function (task) {
-	let taskText = input.value;
-	//Creating li
-	if (taskText) {
-		const taskLi = document.createElement('li');
-		const deleteBtn = document.createElement('button');
-		taskUl.appendChild(taskLi);
-		taskLi.textContent = taskText;
-		taskLi.setAttribute('id', 'li-toggle');
-		taskLi.addEventListener('dblclick', function (e) {
-			taskLi.remove();
-		});
+	displayTodo();
+});
+
+
+const displayTodo = function () {
+	const input = document.getElementById('input');
+	let todoText = input.value;
+	
+	if (todoText) {
+		const todo = createTodo(todoText); 
+		todoList.appendChild(todo);
 		input.value = '';
 	}
 };
 
-taskUl.addEventListener('click', toggleTodo);
-
-function toggleTodo(e) {
-	e.target.classList.toggle('completed');
+const createTodo = function (todoText) { 
+	const todoListItem = document.createElement('li');
+	todoListItem.textContent = todoText;
+	todoListItem.setAttribute('id', 'li-toggle');
+	return  todoListItem; 
 }
 
-form.addEventListener('submit', function (e) {
-	e.preventDefault();
 
-	addTask();
+todoList.addEventListener('click', e => { 
+	e.target.classList.toggle('completed');
 });
+
+
+todoList.addEventListener('dblclick', e => { 
+	e.target.remove(); 
+});
+
